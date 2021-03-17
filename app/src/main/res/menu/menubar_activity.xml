@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/id_patient"
+        android:title="Patient Activity" />
+    <item
+        android:id="@+id/id_testActivity"
+        android:title="Test Activity" />
+    <item
+        android:id="@+id/id_viewTest"
+        android:title="View Test Activity" />
+    <item
+        android:id="@+id/id_updateInfo"
+        android:title="Update Info" />
+
+
+</menu>
