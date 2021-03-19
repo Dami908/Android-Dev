@@ -35,7 +35,7 @@ public class NurseViewModel extends AndroidViewModel {
     }
 
     // Return query results as LiveData object
-    LiveData<List<Nurse>> getAllNurses() {
+    public LiveData<List<Nurse>> getAllNurses() {
         return allNurses;
     }
 }

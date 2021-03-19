@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/id_patient"
-        android:title="Patient Activity" />
+        android:title="@string/menu_patient" />
     <item
         android:id="@+id/id_testActivity"
         android:title="Test Activity" />

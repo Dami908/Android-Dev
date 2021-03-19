@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CharlesThomsonEmmanuelAjayi_COMP304Sec002_Lab4_Ex1">
-        <activity android:name=".viewActivity"></activity>
-        <activity android:name=".updateInfoActivity" />
-        <activity android:name=".testActivity" />
-        <activity android:name=".patientActivity" />
+        <activity android:name=".ViewActivity"></activity>
+        <activity android:name=".UpdateInfoActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".PatientActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".loginActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

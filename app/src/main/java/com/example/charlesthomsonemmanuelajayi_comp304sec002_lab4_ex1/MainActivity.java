@@ -26,19 +26,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent;
         switch(item.getItemId()){
             case R.id.id_patient:
-                intent =new Intent(this,patientActivity.class);
+                intent =new Intent(this, PatientActivity.class);
                 startActivity(intent);
                 break;
             case R.id.id_testActivity:
-                intent =new Intent(this,testActivity.class);
+                intent =new Intent(this, TestActivity.class);
                 startActivity(intent);
                 break;
             case R.id.id_updateInfo:
-                intent =new Intent(this,updateInfoActivity.class);
+                intent =new Intent(this, UpdateInfoActivity.class);
                 startActivity(intent);
                 break;
             case R.id.id_viewTest:
-                intent =new Intent(this,viewActivity.class);
+                intent =new Intent(this, ViewActivity.class);
                 startActivity(intent);
                 break;
             default:

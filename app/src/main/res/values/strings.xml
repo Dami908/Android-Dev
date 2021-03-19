@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CharlesThomsonEmmanuelAjayi_COMP304Sec002_Lab4_Ex1</string>
+    <string name="login_instruction">Please login with your Nurse ID</string>
+    <string name="login_error">Sorry, couldn\'t find that nurse</string>
+    <string name="login_btn">Log in</string>
+    <string name="menu_patient">Register patient</string>
+    <string name="patient_title">Register a patient</string>
+    <string name="patient_registerButton">Register</string>
 </resources>
