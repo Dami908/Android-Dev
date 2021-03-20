@@ -16,22 +16,22 @@ import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models.Tes
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels.PatientViewModel;
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels.TestViewModel;
 
+/*
+    Activity to add a test for a patient
+ */
 public class TestActivity extends AppCompatActivity {
-    EditText testid, patientid, bpl, bph,temp;
+    EditText patientid, bpl, bph,temp;
     Button btnRegister;
     TextView txtMessage;
 
     private TestViewModel testViewModel;
     private SharedPreferences mSharedPreferences;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        testid = (EditText)findViewById(R.id.testID);
         patientid = (EditText)findViewById(R.id.patientID);
         bpl = (EditText)findViewById(R.id.BPL);
         bph = (EditText)findViewById(R.id.BPH);
@@ -46,14 +46,11 @@ public class TestActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //int id = (int) (Math.random() * (999 - 000));// TODO: Is there a better way?
-                String Testid = testid.getText().toString();
                 String Patientid = patientid.getText().toString();
                 String BPL = bpl.getText().toString();
                 String BPH = bph.getText().toString();
                 String Temp = temp.getText().toString();
 
-                int finalTestid = Integer.parseInt(Testid);
                 int finalPatientid = Integer.parseInt(Patientid);
                 double finalBPL = Double.parseDouble(BPL);
                 double finalBPH = Double.parseDouble(BPH);
@@ -62,7 +59,6 @@ public class TestActivity extends AppCompatActivity {
                 int nurseId = mSharedPreferences.getInt("nurseId", 0);
                 Test newTest = new Test();
                 try {
-                    newTest.setTestId(finalTestid);
                     newTest.setPatientId(finalPatientid);
                     newTest.setBpl(finalBPL);
                     newTest.setBph(finalBPH);
@@ -73,7 +69,6 @@ public class TestActivity extends AppCompatActivity {
                     txtMessage.setTextColor(getResources().getColor(R.color.black));
                     txtMessage.setVisibility(View.VISIBLE);
                     // Empty EditText fields
-                    testid.setText("");
                     patientid.setText("");
                     bpl.setText("");
                     bph.setText("");

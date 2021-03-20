@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models.Test;
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.repositories.TestRepository;
@@ -37,5 +38,9 @@ public class TestViewModel extends AndroidViewModel {
     // Return query results as LiveData object
     LiveData<List<Test>> getAllTests() {
         return allTests;
+    }
+
+    public LiveData<List<Test>> getTestsByPatientId(int patientId) {
+        return testRepository.getTestsByPatientId(patientId);
     }
 }

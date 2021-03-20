@@ -5,13 +5,11 @@
         android:title="@string/menu_patient" />
     <item
         android:id="@+id/id_testActivity"
-        android:title="Test Activity" />
+        android:title="@string/menu_test" />
     <item
         android:id="@+id/id_viewTest"
-        android:title="View Test Activity" />
+        android:title="@string/menu_view" />
     <item
         android:id="@+id/id_updateInfo"
-        android:title="Update Info" />
-
-
+        android:title="@string/menu_update_info" />
 </menu>

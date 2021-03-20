@@ -28,6 +28,9 @@ public class TestRepository {
 
     // Returns query results as LiveData object
     public LiveData<List<Test>> getAllTests() { return testsList; }
+    public LiveData<List<Test>> getTestsByPatientId(int patientId) {
+        return testDao.getTestsByPatientId(patientId);
+    }
     // Inserts a test asynchronously
     public void insert(Test test) { insertAsync(test); }
     // Returns insert results as LiveData object

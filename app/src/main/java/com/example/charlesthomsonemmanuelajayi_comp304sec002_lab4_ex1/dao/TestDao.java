@@ -16,4 +16,6 @@ public interface TestDao {
     void insert(Test test);
     @Query("select * from Test order by testId")
     LiveData<List<Test>> getAllTests();
+    @Query("select * from Test where patientId = :patientId")
+    LiveData<List<Test>> getTestsByPatientId(int patientId);
 }

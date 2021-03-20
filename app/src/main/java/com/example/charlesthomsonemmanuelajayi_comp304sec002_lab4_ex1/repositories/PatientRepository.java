@@ -15,6 +15,7 @@ public class PatientRepository {
 
     private final PatientDao patientDao;
     private MutableLiveData<Integer> insertResult = new MutableLiveData<>();
+    private MutableLiveData<Integer> updateResult = new MutableLiveData<>();
     private LiveData<List<Patient>> patientsList;
 
     public PatientRepository(Context context) {
@@ -32,6 +33,10 @@ public class PatientRepository {
     public void insert(Patient patient) { insertAsync(patient); }
     // Returns insert results as LiveData object
     public LiveData<Integer> getInsertResult() { return insertResult; }
+    // Updates a patient asynchronously
+    public void update(Patient patient) { updateAsync(patient); }
+    // Returns update results as LiveData object
+    public LiveData<Integer> getUpdateResult() { return updateResult; }
 
     private void insertAsync(final Patient patient) {
         new Thread(new Runnable() {
@@ -42,6 +47,19 @@ public class PatientRepository {
                     insertResult.postValue(1);
                 } catch (Exception e) {
                     insertResult.postValue(0);
+                }
+            }
+        }).start();
+    }
+
+    private void updateAsync(final Patient patient) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    updateResult.postValue(patientDao.update(patient));
+                } catch (Exception e) {
+                    updateResult.postValue(0);
                 }
             }
         }).start();

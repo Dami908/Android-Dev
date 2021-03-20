@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/txtTestId"
+        android:text="Test ID"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:id="@+id/txtPatientId"
+        android:text="Patient ID"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTestId"
+        android:layout_alignLeft="@+id/txtTestId"
+        android:layout_alignStart="@+id/txtTestId"/>
+
+    <TextView
+        android:id="@+id/txtNurseId"
+        android:text="Nurse ID"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPatientId"
+        android:layout_alignLeft="@+id/txtPatientId"
+        android:layout_alignStart="@+id/txtPatientId" />
+
+    <TextView
+        android:id="@+id/txtBPL"
+        android:text="BPL"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNurseId"
+        android:layout_alignLeft="@+id/txtNurseId"
+        android:layout_alignStart="@+id/txtNurseId" />
+
+    <TextView
+        android:id="@+id/txtBPH"
+        android:text="BPH"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtBPL"
+        android:layout_alignLeft="@+id/txtBPL"
+        android:layout_alignStart="@+id/txtBPL" />
+
+    <TextView
+        android:id="@+id/txtTemperature"
+        android:text="Temperature"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtBPH"
+        android:layout_alignLeft="@+id/txtBPH"
+        android:layout_alignStart="@+id/txtBPH" />
+
+</RelativeLayout>

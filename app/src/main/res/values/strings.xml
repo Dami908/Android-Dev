@@ -4,7 +4,11 @@
     <string name="login_error">Sorry, couldn\'t find that nurse</string>
     <string name="login_btn">Log in</string>
     <string name="menu_patient">Register patient</string>
+    <string name="menu_test">Enter test data</string>
+    <string name="menu_view">View test data</string>
+    <string name="menu_update_info">Update patient data</string>
     <string name="patient_title">Register a patient</string>
+    <string name="patient_subtitle">Current patients</string>
     <string name="test_title">Enter Test Details</string>
     <string name="patient_registerButton">Register</string>
 </resources>

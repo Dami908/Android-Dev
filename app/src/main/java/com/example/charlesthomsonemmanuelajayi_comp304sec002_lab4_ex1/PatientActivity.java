@@ -1,6 +1,8 @@
 package com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.SharedPreferences;
@@ -9,12 +11,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models.Nurse;
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models.Patient;
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels.NurseViewModel;
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels.PatientViewModel;
 
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
@@ -25,9 +30,11 @@ public class PatientActivity extends AppCompatActivity {
     EditText etFirstName, etLastName, etDepartment, etRoom;
     Button btnRegister;
     TextView txtMessage;
+    ListView patientListView;
 
     private PatientViewModel patientViewModel;
     private SharedPreferences mSharedPreferences;
+    private PatientListAdapter patientListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +55,6 @@ public class PatientActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int id = (int) (Math.random() * (999 - 000));// TODO: Is there a better way?
                 String firstName = etFirstName.getText().toString();
                 String lastName = etLastName.getText().toString();
                 String department = etDepartment.getText().toString();
@@ -57,7 +63,6 @@ public class PatientActivity extends AppCompatActivity {
                 int nurseId = mSharedPreferences.getInt("nurseId", 0);
                 Patient newPatient = new Patient();
                 try {
-                    newPatient.setPatientId(id);
                     newPatient.setFirstName(firstName);
                     newPatient.setLastName(lastName);
                     newPatient.setDepartment(department);
@@ -80,5 +85,33 @@ public class PatientActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Set up current list of patients
+        patientListView = (ListView)findViewById(R.id.listViewPatients);
+
+        // Get data from the database and observe any changes
+        patientViewModel.getAllPatients().observe(this, new Observer<List<Patient>>() {
+            @Override
+            public void onChanged(@Nullable List<Patient> patients) {
+                if (patients != null && patients.size() > 0) {
+                    // Update list view
+                    int[] patientIds = new int[patients.size()];
+                    String[] names = new String[patients.size()];
+                    String[] departments = new String[patients.size()];
+                    int[] nurseIds = new int[patients.size()];
+                    String[] rooms = new String[patients.size()];
+                    for (int i = 0; i < patients.size(); i++) {
+                        patientIds[i] = patients.get(i).getPatientId();
+                        names[i] = patients.get(i).getFirstName() + " " + patients.get(i).getLastName();
+                        departments[i] = patients.get(i).getDepartment();
+                        nurseIds[i] = patients.get(i).getNurseId();
+                        rooms[i] = patients.get(i).getRoom();
+                    }
+                    patientListAdapter = new PatientListAdapter(PatientActivity.this, patientIds, names, departments, nurseIds, rooms);
+                    patientListView.setAdapter(patientListAdapter);
+                }
+            }
+        });
+
     }
 }

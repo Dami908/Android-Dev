@@ -15,6 +15,7 @@ public class PatientViewModel extends AndroidViewModel {
 
     private PatientRepository patientRepository;
     private LiveData<Integer> insertResult;
+    private LiveData<Integer> updateResult;
     private LiveData<List<Patient>> allPatients;
 
     public PatientViewModel(@NonNull Application application) {
@@ -34,8 +35,14 @@ public class PatientViewModel extends AndroidViewModel {
         return insertResult;
     }
 
+    // Calls repository to update a patient
+    public void update(Patient patient) { patientRepository.update(patient); }
+
+    // Gets update results as LiveData obejct
+    public LiveData<Integer> getUpdateResult() { return updateResult; }
+
     // Return query results as LiveData object
-    LiveData<List<Patient>> getAllPatients() {
+    public LiveData<List<Patient>> getAllPatients() {
         return allPatients;
     }
 }
