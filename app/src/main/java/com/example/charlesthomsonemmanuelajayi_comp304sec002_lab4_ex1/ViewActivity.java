@@ -23,6 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+
     Activity to view test data of a patient
  */
 public class ViewActivity extends AppCompatActivity {
@@ -60,6 +64,9 @@ public class ViewActivity extends AppCompatActivity {
                             double[] bpls = new double[tests.size()];
                             double[] bphs = new double[tests.size()];
                             double[] temperatures = new double[tests.size()];
+                            double[] glucoses = new double[tests.size()];
+                            double[] thymols = new double[tests.size()];
+                            double[] boneMarrows = new double[tests.size()];
                             for (int i = 0; i < tests.size(); i++) {
                                 testIds[i] = tests.get(i).getTestId();
                                 patientIds[i] = tests.get(i).getPatientId();
@@ -67,8 +74,11 @@ public class ViewActivity extends AppCompatActivity {
                                 bpls[i] = tests.get(i).getBpl();
                                 bphs[i] = tests.get(i).getBph();
                                 temperatures[i] = tests.get(i).getTemperature();
+                                glucoses[i] = tests.get(i).getGlucoseTolerance();
+                                thymols[i] = tests.get(i).getThymolTurbidity();
+                                boneMarrows[i] = tests.get(i).getBoneMarrowAspiration();
                             }
-                            testListAdapter = new TestListAdapter(ViewActivity.this, testIds, patientIds, nurseIds, bpls, bphs, temperatures);
+                            testListAdapter = new TestListAdapter(ViewActivity.this, testIds, patientIds, nurseIds, bpls, bphs, temperatures, glucoses, thymols, boneMarrows);
                             listViewTests.setAdapter(testListAdapter);
                         }
                     }

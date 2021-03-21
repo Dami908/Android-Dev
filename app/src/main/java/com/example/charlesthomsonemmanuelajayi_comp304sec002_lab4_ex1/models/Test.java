@@ -3,6 +3,11 @@ package com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+ */
 @Entity
 public class Test {
 
@@ -13,6 +18,9 @@ public class Test {
     private double bpl; // blood pressure low value
     private double bph; // blood pressure high value
     private double temperature;
+    private double glucoseTolerance;
+    private double thymolTurbidity;
+    private double boneMarrowAspiration;
 
     // Setters
     public void setTestId(int testId) {
@@ -33,6 +41,15 @@ public class Test {
     public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
+    public void setGlucoseTolerance(double glucoseTolerance) {
+        this.glucoseTolerance = glucoseTolerance;
+    }
+    public void setThymolTurbidity(double thymolTurbidity) {
+        this.thymolTurbidity = thymolTurbidity;
+    }
+    public void setBoneMarrowAspiration(double boneMarrowAspiration) {
+        this.boneMarrowAspiration = boneMarrowAspiration;
+    }
 
     // Getters
     public int getTestId() {
@@ -52,5 +69,14 @@ public class Test {
     }
     public double getTemperature() {
         return temperature;
+    }
+    public double getGlucoseTolerance() {
+        return glucoseTolerance;
+    }
+    public double getThymolTurbidity() {
+        return thymolTurbidity;
+    }
+    public double getBoneMarrowAspiration() {
+        return boneMarrowAspiration;
     }
 }

@@ -22,6 +22,13 @@ import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+
+    Activity to login
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText etNurseName, etPassword;
@@ -103,5 +110,13 @@ public class LoginActivity extends AppCompatActivity {
                 txtError.setVisibility(View.VISIBLE);
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Clear input fields
+        etNurseName.setText("");
+        etPassword.setText("");
     }
 }

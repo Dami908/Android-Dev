@@ -71,4 +71,37 @@
         android:layout_alignLeft="@+id/txtBPH"
         android:layout_alignStart="@+id/txtBPH" />
 
+    <TextView
+        android:id="@+id/txtGlucose"
+        android:text="Glucose Tolerance"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTemperature"
+        android:layout_alignLeft="@+id/txtTemperature"
+        android:layout_alignStart="@+id/txtTemperature" />
+
+    <TextView
+        android:id="@+id/txtThymol"
+        android:text="Thymol Turbidity"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtGlucose"
+        android:layout_alignLeft="@+id/txtGlucose"
+        android:layout_alignStart="@+id/txtGlucose" />
+
+    <TextView
+        android:id="@+id/txtBoneMarrow"
+        android:text="Bone Marrow Aspiration"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtThymol"
+        android:layout_alignLeft="@+id/txtThymol"
+        android:layout_alignStart="@+id/txtThymol" />
+
 </RelativeLayout>

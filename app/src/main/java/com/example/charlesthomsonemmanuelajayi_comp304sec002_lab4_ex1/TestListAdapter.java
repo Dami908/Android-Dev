@@ -11,6 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+/*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+ */
 public class TestListAdapter extends BaseAdapter  {
 
     Context context;
@@ -20,8 +25,11 @@ public class TestListAdapter extends BaseAdapter  {
     private final double[] bpls;
     private final double[] bphs;
     private final double[] temperatures;
+    private final double[] glucoses;
+    private final double[] thymols;
+    private final double[] boneMarrows;
 
-    public TestListAdapter(Context context, int[] testIds, int[] patientIds, int[] nurseIds, double[] bpls, double[] bphs, double[] temperatures) {
+    public TestListAdapter(Context context, int[] testIds, int[] patientIds, int[] nurseIds, double[] bpls, double[] bphs, double[] temperatures, double[] glucoses, double[] thymols, double[] boneMarrows) {
         this.context = context;
         this.testIds = testIds;
         this.patientIds = patientIds;
@@ -29,6 +37,9 @@ public class TestListAdapter extends BaseAdapter  {
         this.bpls = bpls;
         this.bphs = bphs;
         this.temperatures = temperatures;
+        this.glucoses = glucoses;
+        this.thymols = thymols;
+        this.boneMarrows = boneMarrows;
     }
 
     @Override
@@ -61,6 +72,9 @@ public class TestListAdapter extends BaseAdapter  {
             viewHolder.bpl = (TextView)convertView.findViewById(R.id.txtBPL);
             viewHolder.bph = (TextView)convertView.findViewById(R.id.txtBPH);
             viewHolder.temperature = (TextView)convertView.findViewById(R.id.txtTemperature);
+            viewHolder.glucose = (TextView)convertView.findViewById(R.id.txtGlucose);
+            viewHolder.thymol = (TextView)convertView.findViewById(R.id.txtThymol);
+            viewHolder.boneMarrow = (TextView)convertView.findViewById(R.id.txtBoneMarrow);
 
             result = convertView;
 
@@ -77,6 +91,9 @@ public class TestListAdapter extends BaseAdapter  {
         viewHolder.bpl.setText("BPL: " + String.valueOf(bpls[position]));
         viewHolder.bph.setText("BPH: " + String.valueOf(bphs[position]));
         viewHolder.temperature.setText("Temperature: " + String.valueOf(temperatures[position]));
+        viewHolder.glucose.setText("Glucose Tolerance: " + String.valueOf(glucoses[position]));
+        viewHolder.thymol.setText("Thymol Turbidity: " + String.valueOf(thymols[position]));
+        viewHolder.boneMarrow.setText("Bone Marrow Aspiration: " + String.valueOf(boneMarrows[position]));
 
         return convertView;
     }
@@ -88,5 +105,8 @@ public class TestListAdapter extends BaseAdapter  {
         TextView bpl;
         TextView bph;
         TextView temperature;
+        TextView glucose;
+        TextView thymol;
+        TextView boneMarrow;
     }
 }

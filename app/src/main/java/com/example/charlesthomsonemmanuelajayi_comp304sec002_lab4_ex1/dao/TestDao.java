@@ -9,6 +9,11 @@ import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models.Tes
 
 import java.util.List;
 
+/*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+ */
 @Dao
 public interface TestDao {
 

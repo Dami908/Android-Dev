@@ -17,10 +17,14 @@ import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels
 import com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.viewmodels.TestViewModel;
 
 /*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+
     Activity to add a test for a patient
  */
 public class TestActivity extends AppCompatActivity {
-    EditText patientid, bpl, bph,temp;
+    EditText patientid, bpl, bph, temp, glucose, thymol, boneMarrow;
     Button btnRegister;
     TextView txtMessage;
 
@@ -36,6 +40,9 @@ public class TestActivity extends AppCompatActivity {
         bpl = (EditText)findViewById(R.id.BPL);
         bph = (EditText)findViewById(R.id.BPH);
         temp = (EditText)findViewById(R.id.Temperature);
+        glucose = (EditText)findViewById(R.id.GlucoseTolerance);
+        thymol = (EditText)findViewById(R.id.ThymolTurbidity);
+        boneMarrow = (EditText)findViewById(R.id.BoneMarrowAspiration);
         txtMessage = (TextView)findViewById(R.id.txtMessage);
         txtMessage.setVisibility(View.INVISIBLE);
 
@@ -50,11 +57,17 @@ public class TestActivity extends AppCompatActivity {
                 String BPL = bpl.getText().toString();
                 String BPH = bph.getText().toString();
                 String Temp = temp.getText().toString();
+                String Glu = glucose.getText().toString();
+                String Thy = thymol.getText().toString();
+                String Bone = boneMarrow.getText().toString();
 
                 int finalPatientid = Integer.parseInt(Patientid);
                 double finalBPL = Double.parseDouble(BPL);
                 double finalBPH = Double.parseDouble(BPH);
                 double finalTEMP = Double.parseDouble(Temp);
+                double finalGLU = Double.parseDouble(Glu);
+                double finalTHY = Double.parseDouble(Thy);
+                double finalBONE = Double.parseDouble(Bone);
                 // Get nurseId from SharedPreferences
                 int nurseId = mSharedPreferences.getInt("nurseId", 0);
                 Test newTest = new Test();
@@ -63,9 +76,12 @@ public class TestActivity extends AppCompatActivity {
                     newTest.setBpl(finalBPL);
                     newTest.setBph(finalBPH);
                     newTest.setTemperature(finalTEMP);
+                    newTest.setGlucoseTolerance(finalGLU);
+                    newTest.setThymolTurbidity(finalTHY);
+                    newTest.setBoneMarrowAspiration(finalBONE);
                     newTest.setNurseId(nurseId);
                     testViewModel.insert(newTest);
-                    txtMessage.setText("Test Result registered!");
+                    txtMessage.setText(getString(R.string.test_okmessage));
                     txtMessage.setTextColor(getResources().getColor(R.color.black));
                     txtMessage.setVisibility(View.VISIBLE);
                     // Empty EditText fields
@@ -73,9 +89,12 @@ public class TestActivity extends AppCompatActivity {
                     bpl.setText("");
                     bph.setText("");
                     temp.setText("");
+                    glucose.setText("");
+                    thymol.setText("");
+                    boneMarrow.setText("");
                 } catch (Exception e) {
                     Log.d("CT", "There was a problem with creating/registering the new Test Result");
-                    txtMessage.setText("Something went wrong with the Test Registration");
+                    txtMessage.setText(getString(R.string.test_errormessage));
                     txtMessage.setTextColor(getResources().getColor(R.color.red));
                     txtMessage.setVisibility(View.VISIBLE);
                 }

@@ -3,6 +3,11 @@ package com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1.models;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+ */
 @Entity
 public class Patient {
 

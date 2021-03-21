@@ -4,23 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange"
+    android:background="@drawable/backrepeat"
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtInstruction"
         android:layout_width="341dp"
         android:layout_height="94dp"
         android:gravity="center_horizontal"
-        android:text="Please make a selection from the menu"
+        android:text="@string/main_instruction"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
-
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.111" />
+
+    <Button
+        android:id="@+id/btnRegisterPatient"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_patient"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInstruction"
+        app:layout_constraintVertical_bias="0.111"/>
+
+    <Button
+        android:id="@+id/btnEnterTestData"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_test"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterPatient"
+        app:layout_constraintVertical_bias="0.111"/>
+
+    <Button
+        android:id="@+id/btnViewTestData"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_view"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnterTestData"
+        app:layout_constraintVertical_bias="0.111"/>
+
+    <Button
+        android:id="@+id/btnUpdatePatientInfo"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_update_info"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewTestData"
+        app:layout_constraintVertical_bias="0.111"/>
+
+    <ImageButton
+        android:id="@+id/btnLogout"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logoutbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdatePatientInfo"
+        app:layout_constraintVertical_bias="0.111"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

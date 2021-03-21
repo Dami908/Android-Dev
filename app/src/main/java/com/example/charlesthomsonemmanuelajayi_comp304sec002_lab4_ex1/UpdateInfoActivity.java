@@ -21,6 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+    
     Activity to view and edit a patient
  */
 public class UpdateInfoActivity extends AppCompatActivity {
@@ -86,7 +90,7 @@ public class UpdateInfoActivity extends AppCompatActivity {
                     txtMessage.setVisibility(View.INVISIBLE);
                 } else {
                     // Couldn't find
-                    txtMessage.setText("Sorry, couldn't find that patient");
+                    txtMessage.setText(getString(R.string.update_patienterrormessage));
                     txtMessage.setVisibility(View.VISIBLE);
                 }
             }
@@ -104,12 +108,12 @@ public class UpdateInfoActivity extends AppCompatActivity {
                     newPatient.setRoom(etRoom.getText().toString());
                     newPatient.setNurseId(Integer.parseInt(etNurseId.getText().toString()));
                     patientViewModel.update(newPatient);
-                    txtMessage.setText("Patient updated!");
+                    txtMessage.setText(getString(R.string.update_okmessage));
                     txtMessage.setTextColor(getResources().getColor(R.color.black));
                     txtMessage.setVisibility(View.VISIBLE);
                 } catch (Exception e) {
                     Log.d("CT", "There was a problem with updating the patient");
-                    txtMessage.setText("Something went wrong with the updating");
+                    txtMessage.setText(getString(R.string.update_errormessage));
                     txtMessage.setTextColor(getResources().getColor(R.color.red));
                     txtMessage.setVisibility(View.VISIBLE);
                 }

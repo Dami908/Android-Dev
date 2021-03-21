@@ -1,6 +1,7 @@
 package com.example.charlesthomsonemmanuelajayi_comp304sec002_lab4_ex1;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,6 +24,10 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
+    Charles Thomson 301062645
+    Emmanuel Ajayi 301050676
+    COMP304 March 20, 2021
+
     Activity to add and view patients
  */
 public class PatientActivity extends AppCompatActivity {
@@ -69,7 +74,7 @@ public class PatientActivity extends AppCompatActivity {
                     newPatient.setRoom(room);
                     newPatient.setNurseId(nurseId);
                     patientViewModel.insert(newPatient);
-                    txtMessage.setText("Patient registered!");
+                    txtMessage.setText(getString(R.string.patient_okmessage));
                     txtMessage.setTextColor(getResources().getColor(R.color.black));
                     txtMessage.setVisibility(View.VISIBLE);
                     // Empty EditText fields
@@ -79,7 +84,7 @@ public class PatientActivity extends AppCompatActivity {
                     etRoom.setText("");
                 } catch (Exception e) {
                     Log.d("CT", "There was a problem with creating/registering the new patient");
-                    txtMessage.setText("Something went wrong with the registration");
+                    txtMessage.setText(getString(R.string.patient_errormessage));
                     txtMessage.setTextColor(getResources().getColor(R.color.red));
                     txtMessage.setVisibility(View.VISIBLE);
                 }

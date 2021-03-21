@@ -1,14 +1,42 @@
 <resources>
-    <string name="app_name">CharlesThomsonEmmanuelAjayi_COMP304Sec002_Lab4_Ex1</string>
+    <string name="app_name">Patient Tracker</string>
     <string name="login_instruction">Please login with your Nurse ID</string>
+    <string name="login_id">Id goes here</string>
+    <string name="login_password">Password goes here</string>
     <string name="login_error">Sorry, couldn\'t find that nurse</string>
     <string name="login_btn">Log in</string>
+    <string name="main_instruction">Please make a selection from the menu</string>
     <string name="menu_patient">Register patient</string>
     <string name="menu_test">Enter test data</string>
     <string name="menu_view">View test data</string>
     <string name="menu_update_info">Update patient data</string>
     <string name="patient_title">Register a patient</string>
     <string name="patient_subtitle">Current patients</string>
-    <string name="test_title">Enter Test Details</string>
+    <string name="patient_id">Patient ID</string>
+    <string name="patient_firstname">First name</string>
+    <string name="patient_lastname">Last name</string>
+    <string name="patient_department">Department</string>
+    <string name="patient_nurseId">Nurse ID</string>
+    <string name="patient_room">Room</string>
+    <string name="patient_okmessage">Patient registered</string>
+    <string name="patient_errormessage">Something went wrong with the registration</string>
+    <string name="test_title">Add a Test</string>
+    <string name="test_bpl">BPL</string>
+    <string name="test_bph">BPH</string>
+    <string name="test_temperature">Temperature</string>
+    <string name="test_glucose">Glucose Tolerance</string>
+    <string name="test_thymol">Thymol Turbidity</string>
+    <string name="test_bonemarrow">Bone Marrow Aspiration</string>
+    <string name="test_okmessage">Test Result registered</string>
+    <string name="test_errormessage">Something went wrong with the Test Registration</string>
     <string name="patient_registerButton">Register</string>
+    <string name="update_instruction">Enter id of patient to view/update</string>
+    <string name="update_getdata">Get Data</string>
+    <string name="update_updatedata">Update Data</string>
+    <string name="update_okmessage">Patient updated</string>
+    <string name="update_errormessage">Something went wrong with the updating</string>
+    <string name="update_patienterrormessage">Sorry, couldn\'t find that patient</string>
+    <string name="view_instructions">Enter id of patient to view tests</string>
+    <string name="view_gettests">Get Tests</string>
+
 </resources>
